@@ -1,0 +1,14 @@
+name: citypulse
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/citypulse
+    branch: main
+  run_command: streamlit run app/streamlit_app.py --server.port=$PORT --server.address=0.0.0.0
+  environment_slug: python
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 8080
+  routes:
+  - path: /
